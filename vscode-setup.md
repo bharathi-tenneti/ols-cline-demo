@@ -10,8 +10,8 @@ This guide walks through setting up Cline AI Assistant with OpenShift LightSpeed
 |---|---|
 | 1. Install Cline Extension | ![Install Cline Extension](./screenshots/cline-install.png) |
 | 2. Enable MCP Servers | ![MCP Server Configuration](./screenshots/mcp-config.png) |
-| 3. Verify Connection Status | ![MCP Connection Status](./screenshots/mcp-status.png) |
-| 4. First Conversation | ![Cline First Usage](./screenshots/cline-first-use.png) |
+| 3. Cline Conversation | ![Cline First Usage](./screenshots/cline-ols-2.png) |
+| 4. Github MCP Conversation | ![Github MCP Usage](./screenshots/github-mcp.png)
 
 ---
 
@@ -38,11 +38,19 @@ Add these server configurations:
       "command": "uv",
       "args": [
         "--directory",
-        "/path/to/ols-vscode/ols-mcp",
+        "/Users/btenneti/github.com/openshift-ai/ols-vscode/ols-mcp",
         "run",
         "python",
         "-m",
         "ols_mcp.server"
+      ],
+      "env": {
+        "OLS_API_URL": "https://ols-route-openshift-lightspeed.apps.cluster-fj57s.dynamic.redhatworkshops.io", // This is the Openshift Lightspeed route.
+        "OLS_API_TOKEN": "<<YOUR-OPENSHIFT-TOKEN>>",
+        "OLS_VERIFY_SSL": "false"
+      },
+      "autoApprove": [
+        "openshift-lightspeed"
       ]
     },
     "github": {
@@ -50,6 +58,12 @@ Add these server configurations:
       "args": [
         "-y",
         "@modelcontextprotocol/server-github"
+      ],
+      "env": {
+        "GITHUB_PERSONAL_ACCESS_TOKEN": "<<your-GH-token>>"
+      },
+      "autoApprove": [
+        "create_pull_request"
       ]
     }
   }
