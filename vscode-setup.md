@@ -17,6 +17,29 @@ This guide walks through setting up Cline AI Assistant with OpenShift LightSpeed
 
 ## 🛠️ Step-by-Step Setup
 
+### Pre-Requisites
+Running Openshift cluster.
+Openshift Lightspeed operator installed with route configured as shown below.
+More details [here](https://docs.redhat.com/en/documentation/red_hat_openshift_lightspeed/1.0/html-single/configure/index#ols-creating-lightspeed-custom-resource-file-using-web-console_ols-configuring-openshift-lightspeed)
+```
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: ols-route
+  namespace: openshift-lightspeed
+spec:
+  to:
+    name: lightspeed-app-server
+    weight: 100
+    kind: Service
+  port:
+    targetPort: https
+  tls:
+    termination: reencrypt
+  wildcardPolicy: None
+  ```
+  
+
 ### 1. Install Cline Extension
 1. Open VS Code Extensions panel
 2. Search for **Cline**
