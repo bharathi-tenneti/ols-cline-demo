@@ -1,2 +1,2 @@
-# ols-cline-demo
+# ols-cline-demo [WIP]
 Demo to showcase how to configure VSCode with  Cline Extension , and using Redhat Openshift Lightspeed , and Github MCP servers for more cluster aware Openshift interactions
