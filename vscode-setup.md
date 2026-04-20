@@ -108,22 +108,4 @@ For GitHub MCP server:
 2. Check bottom status bar for MCP connection indicators
 3. You should see ✓ next to both servers when connected
 
----
 
-## ✅ Verification Checklist
-
-- [ ] Cline extension installed and enabled
-- [ ] MCP servers configured in settings
-- [ ] GitHub token set with correct permissions
-- [ ] Both servers show connected status
-- [ ] Can query OpenShift best practices
-- [ ] Can perform GitHub operations from chat
-
----
-
-## 📝 Notes
-
-- Screenshots should be placed in `/screenshots` directory
-- All paths should be absolute or relative to your workspace
-- Restart VS Code after making configuration changes
-- Check Cline output panel for debugging information
