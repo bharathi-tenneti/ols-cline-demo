@@ -20,8 +20,11 @@ This guide walks through setting up Cline AI Assistant with OpenShift LightSpeed
 ### Pre-Requisites
 1. Running Openshift cluster.
 2. Openshift Lightspeed operator installed with route configured as shown below.
-More details [here](https://docs.redhat.com/en/documentation/red_hat_openshift_lightspeed/1.0/html-single/configure/index#ols-creating-lightspeed-custom-resource-file-using-web-console_ols-configuring-openshift-lightspeed)
+More details [here][https://developers.redhat.com/articles/2026/02/04/how-connect-openshift-lightspeed-mcp-your-ide#prepare_your_environment)]
 3. Local copy for Kubernetes MCP server repo, see above link for more details.
+```
+git clone https://github.com/thoraxe/ols-mcp.git
+```
 ```
 apiVersion: route.openshift.io/v1
 kind: Route
